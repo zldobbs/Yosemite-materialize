@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yosemite | Materialized</title>
+    <meta charset="utf-8">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <!-- Materialize CDN's and setup -->
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="animate.css">
+    <style>
+      #pageTitle, .pageContent, .icons, .icon-text {
+        opacity: 0;
+      }
+
+      .carousel-slider {
+        background-color: #3d4044;
+        min-height: 100vh;
+      }
+
+      .carousel-slider img {
+        height: 100%;
+      }
+
+      .carousel-text, .carousel-sub {
+        z-index: 100;
+        left: 0;
+        top: 5vh;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        color: white;
+      }
+
+      .carousel-sub {
+        top: 20vh;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page header display -->
+    <header>
+      <div class="carousel carousel-slider" data-indicators="true">
+          <div class="carousel-item">
+            <h1 class="carousel-text">Yosemite</h1>
+            <p class="carousel-sub">Nature's sandbox</p>
+            <img src="img/head-1.jpg"
+                 alt="nature">
+          </div>
+          <div class="carousel-item">
+            <h1 class="carousel-text">Wildlife</h1>
+            <p class="carousel-sub">The beautiful animals roam free</p>
+            <img src="img/head-2.jpg"
+                 alt="deer">
+          </div>
+          <div class="carousel-item">
+            <h1 class="carousel-text">Go Wild</h1>
+            <p class="carousel-sub">Experience the ultimate outdoor adventure</p>
+            <img src="img/head-3.jpg"
+                 alt="camp">
+          </div>
+      </div>
+    </header>
+
+    <!-- Main page content -->
+    <main>
+      <div class="section white">
+        <div class="container">
+          <h1 id="pageTitle" class="animated">Yosemite National Park</h1>
+          <p class="pageContent animated">Yosemite National Park is a national park spanning portions of Tuolumne, Mariposa and Madera counties in Northern California.
+             The park, which is managed by the National Park Service, covers an area of 747,956 acres (1,168.681 sq mi; 302,687 ha; 3,026.87 km2)
+             and reaches across the western slopes of the Sierra Nevada mountain range. On average, about 4 million people visit Yosemite each year,
+             and most spend the majority of their time in the 5.9 square miles (15 km2) of Yosemite Valley.
+             The park set a visitation record in 2016, surpassing 5 million visitors for the first time in its history.
+          </p>
+          <p class="pageContent animated">Designated a World Heritage Site in 1984, Yosemite is internationally recognized for its granite cliffs,
+             waterfalls, clear streams, giant sequoia groves, lakes, mountains, glaciers, and biological diversity.
+             Almost 95% of the park is designated wilderness. Yosemite was central to the development of the national park idea. First, Galen Clark and
+             others lobbied to protect Yosemite Valley from development, ultimately leading to President Abraham Lincoln's signing the Yosemite Grant in 1864.
+             Later, John Muir led a successful movement to establish a larger national park encompassing not just the valley,
+             but surrounding mountains and forests as well—paving the way for the United States national park system.
+          </p>
+        </div>
+      </div>
+      <div class="parallax-container">
+        <div class="parallax">
+          <img src="img/river.jpg"
+               alt="parallax-river">
+        </div>
+      </div>
+      <div class="section white">
+        <div class="container">
+          <h1 class="center icons animated">The Know How</h1>
+          <div class="row">
+            <div class="col s12 m4 center">
+              <img src="img/icon-wolf.png"
+                   class="circle responsive-img icons animated" alt="animals">
+              <p class="icon-text animated">The animals in Yosemite are fantastically ferocious</p>
+            </div>
+            <div class="col s12 m4 center">
+              <img src="img/icon-volcano.png"
+                   class="circle responsive-img icons animated" alt="volcano">
+              <p class="icon-text animated">Yosemite is actually a massive supervolcano</p>
+            </div>
+            <div class="col s12 m4 center">
+              <img src="img/icon-fish.png"
+                   class="circle responsive-img icons animated" alt="fish">
+              <p class="icon-text animated">You can catch, but you better release!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="parallax-container">
+        <div class="parallax">
+          <img src="img/wolves.jpg"
+               alt="parallax-wolf">
+        </div>
+      </div>
+    </main>
+
+    <!-- Page footer -->
+    <footer>
+      <nav>
+        <div class="nav-wrapper amber darken-4">
+          <div class="container">
+            <ul id="nav-mobile" class="left">
+              <li><a href="http://www.materializecss.com/">Powered by Materialize</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right">
+              <li><a href="http://www.zachdobbs.life/">Zachary Dobbs</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </footer>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Javascript Sandbox -->
+    <script>
+      $(document).ready(function() {
+        // Carousel
+        $('.carousel').carousel();
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+        setInterval(function() {
+          $('.carousel').carousel('next');
+        }, 4000);
+
+        // Toast
+        Materialize.toast("Welcome to the site!", 5000);
+
+        // Parallax
+        $('.parallax').parallax();
+
+        // ScrollFire
+        var options = [
+          {selector: '#pageTitle', offset: 150, callback: function(el) {
+            $("#pageTitle").addClass("fadeInDown")
+          } },
+          {selector: '.pageContent', offset: 200, callback: function(el) {
+            $(".pageContent").addClass("fadeInLeftBig")
+          } },
+          {selector: '.icons', offset: 250, callback: function(el) {
+            $(".icons").addClass("fadeInUp")
+          } },
+          {selector: '.icon-text', offset: 225, callback: function(el) {
+            $(".icon-text").addClass("fadeInUp")
+          } }
+        ];
+        Materialize.scrollFire(options);
+      });
+    </script>
+  </body>
+</html>
